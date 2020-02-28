@@ -8,4 +8,4 @@ For example, table cinema:   */
 select id,movie,description,rating
 from cinema 
 where not(description="boring") and (id%2 =1) 
-order by id desc;
+order by rating desc;
