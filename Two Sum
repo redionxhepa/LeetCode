@@ -1,0 +1,18 @@
+#Given an array of integers, return indices of the two numbers such that they add up to a specific target.
+
+#You may assume that each input would have exactly one solution, and you may not use the same element twice.
+
+class Solution(object):
+    def twoSum(self, nums, target):
+        hashTable={}
+        
+        for index,value in enumerate(nums):
+            otherNumber=target-value #the other part missing
+            if(otherNumber in hashTable and  hashTable[otherNumber]!=index):
+                return [hashTable[otherNumber],index]
+            #insert into the dictionary the new number and its index
+            hashTable[value]=index
+            
+        return None  #if after the for lopp there is nothing found
+    
+        
