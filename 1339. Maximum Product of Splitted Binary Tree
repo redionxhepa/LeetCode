@@ -1,0 +1,25 @@
+#1339. Maximum Product of Splitted Binary Tree
+
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, x):
+#         self.val = x
+#         self.left = None
+#         self.right = None
+class Solution(object):
+     def maxProduct(self, root):
+            if root==None:
+                return 0      
+            self.sumsarray=[]
+            def calculateSumTree(self,nodeRoot):
+              if(nodeRoot==None):
+                    return 0      
+              sumsubSubTree=nodeRoot.val+calculateSumTree(self,nodeRoot.left)+ calculateSumTree(self,nodeRoot.right)
+              self.sumsarray.append(sumsubSubTree) 
+              return sumsubSubTree
+        
+            self.totalSum=calculateSumTree(self,root)
+            return max([(x * (self.totalSum - x)) for x in self.sumsarray]) % (10 ** 9 + 7)
+
+
+        
