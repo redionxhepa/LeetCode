@@ -1,0 +1,16 @@
+#Given an n-ary tree, return the preorder traversal of its nodes' values.
+
+#Nary-Tree input serialization is represented in their level order traversal, each group of children is separated by the null value (See examples).
+
+ 
+   def preorder(self, root):
+        def goDeep(node):
+            if node == None:
+                return
+            #do the first one
+            self.preoderList.append(node.val)
+            for element in node.children:
+                goDeep(element) 
+        self.preoderList=[]
+        goDeep(root)
+        return self.preoderList
