@@ -1,0 +1,15 @@
+
+#Given an n-ary tree, return the postorder traversal of its nodes' values.
+#Nary-Tree input serialization is represented in their level order traversal, each group of children is separated by the null value (See examples).
+
+ 
+  def postorder(self, root):
+        self.postOderList=[]    
+        def godeep(node):
+            if node== None:
+                return 
+            for element_node in node.children:
+                godeep(element_node)
+            self.postOderList.append(node.val)
+        godeep(root)
+        return self.postOderList
